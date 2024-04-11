@@ -19,8 +19,9 @@ python --version
 
 3) Go to ecghula-project directory in terminal
 
-4) Install package with a command:
-python -m pip install .
+4) In Windows double click `setup.bat` or
+run in PowerShell `.\setup.bat`
+(or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
 
 ###########
 
@@ -39,9 +40,7 @@ from ecghula.util import list_directory
 
 
 @click.command()
-@click.option(
-    "--dir_path", "-d", default=".", help="HULA ECG file directory or file path"
-)
+@click.option("--dir_path", "-d", default=".", help="HULA ECG directory or file path")
 def main(dir_path):
     list_directory(dir_path)
 
