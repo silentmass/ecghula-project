@@ -25,6 +25,8 @@ Juha Leukkunen
 ## Prepare HULA ECG .txt file
 
 Example usage in command line (remember add "" if path contains spaces):
+
 `ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
+
 Script creates another .csv file with original file name
 with postfix _prepared.csv and a .log file
