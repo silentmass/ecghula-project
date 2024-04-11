@@ -1,10 +1,10 @@
 import sys
 
-from ecghula import util
+from ecghula.util import print_message
 
 
 def main():
-    util.print_message(" ".join(sys.argv[1:]))
+    print_message(" ".join(sys.argv[1:]))
 
 
 if __name__ == "__main__":
