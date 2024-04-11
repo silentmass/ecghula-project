@@ -1,4 +1,4 @@
-# Prepare HULA .txt files for Kubios
+# Prepare HULA ECG .txt files for Kubios
 
 Prepare .csv files for Kubios from HULA ECG .txt files.
 Fills Nan values with zeros.
@@ -8,12 +8,12 @@ Script creates another .csv file with original file name with postfix `_prepared
 ## Installation instructions
 
 1) Download and install Python from <https://www.python.org/downloads/>
-2) Open terminal and type the following to check python is installed:
+2) Open Linux Terminal or Windows PowerShell and check python is installed:
    - `python --version`
 3) Download project directory [ecghula-project](https://github.com/silentmass/ecghula-project) from github
-   1) Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
-4) Go to `ecghula-project` directory in Linux terminal or Windows PowerShell
-5) In Windows run `setup.bat` (or in Linux run `chmod +x setup.sh` and then `./setup.sh`)
+   - Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
+4) Go to `ecghula-project` directory in Windows PowerShell or in Linux Terminal
+5) In Windows double click `setup.bat` or run in PowerShell `.\setup.bat` (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
 
 ## Create Windows PowerShell shortcut on desktop
 
@@ -29,6 +29,10 @@ Script creates another .csv file with original file name with postfix `_prepared
 Example usage in command line (remember to enclose path containing spaces with ""):
 
 `ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
+
+You can also pass directory path and iterate through all the directory .txt files
+
+`ecghula -d "/Users/juha/Downloads/hula"`
 
 ## Contact
 
