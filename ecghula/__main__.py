@@ -26,7 +26,7 @@ github https://github.com/silentmass/ecghula-project
 4) In Windows double click `setup.bat` or
 run in PowerShell `.\setup.bat`
 (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
-At the end remember to activate environment manually
+5) Finally, remember to activate environment manually
 in Windows `venv\Scripts\activate` or
 in Linux `source ./venv/bin/activate`
 
@@ -37,12 +37,22 @@ Prepare HULA ECG .txt file
 Example usage in command line
 (remember to enclose path containing spaces with ""):
 
+CASE 1:
+
 `ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
+
+CASE 2:
 
 You can also pass directory path and
 iterate through all the directory .txt files
 
 `ecghula -d "/Users/juha/Downloads/hula"`
+
+CASE 3:
+
+If you are in the directory where the .txt file is located you can just run
+
+`ecghula`
 """
 
 import click

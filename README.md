@@ -14,7 +14,7 @@ Script creates another .csv file with original file name with postfix `_prepared
    - Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
 4) Go to `ecghula-project` directory in Windows PowerShell or in Linux Terminal
 5) In Windows double click `setup.bat` or run in PowerShell `.\setup.bat` (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
-   - At the end remember to activate environment manually in Windows `venv\Scripts\Activate.ps1` or in Linux `source ./venv/bin/activate`
+6) Finally, remember to activate environment manually in Windows `venv\Scripts\Activate.ps1` or in Linux `source ./venv/bin/activate`
 
 ## Create Windows PowerShell shortcut on desktop
 
@@ -27,13 +27,23 @@ Script creates another .csv file with original file name with postfix `_prepared
 
 ## Running script to prepare HULA ECG .txt file
 
+### CASE 1
+
 Example usage in command line (remember to enclose path containing spaces with ""):
 
 `ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
 
+### CASE 2
+
 You can also pass directory path and iterate through all the directory .txt files
 
 `ecghula -d "/Users/juha/Downloads/hula"`
+
+### CASE 3
+
+If you are in the directory where the .txt file is located you can just run
+
+`ecghula`
 
 ## Contact
 
