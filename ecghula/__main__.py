@@ -1,5 +1,8 @@
-"""Prepare .csv files for Kubios from HULA ECG .txt files.
+r"""Prepare .csv files for Kubios from HULA ECG .txt files.
 Fills Nan values with zeros.
+
+Script creates another .csv file with original file name
+with postfix `_prepared.csv` and a `.log` file
 
 Used in VTT LaunchPad project MUKAVA
 
@@ -23,17 +26,23 @@ github https://github.com/silentmass/ecghula-project
 4) In Windows double click `setup.bat` or
 run in PowerShell `.\setup.bat`
 (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
-At the end remember to activate environment manually in Windows `venv\Scripts\activate` or in Linux `source ./venv/bin/activate`
+At the end remember to activate environment manually
+in Windows `venv\Scripts\activate` or
+in Linux `source ./venv/bin/activate`
 
 ###########
 
 Prepare HULA ECG .txt file
 
-Example usage in command line (remember add "" if path contains spaces):
-ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"
+Example usage in command line
+(remember to enclose path containing spaces with ""):
 
-Script creates another .csv file with original file name
-with postfix _prepared.csv and a .log file
+`ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
+
+You can also pass directory path and
+iterate through all the directory .txt files
+
+`ecghula -d "/Users/juha/Downloads/hula"`
 """
 
 import click
@@ -42,7 +51,8 @@ from ecghula.util import list_directory
 
 
 @click.command()
-@click.option("--dir_path", "-d", default=".", help="HULA ECG directory or file path")
+@click.option("--dir_path", "-d", default=".",
+              help="HULA ECG directory or file path")
 def main(dir_path):
     list_directory(dir_path)
 

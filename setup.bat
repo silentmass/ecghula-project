@@ -23,4 +23,4 @@ if %errorlevel% neq 0 (
     exit /b 1
 )
 
-echo Setup complete.
+echo Setup complete. Remember to activate environment manually using command: venv\Scripts\activate

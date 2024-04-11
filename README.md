@@ -16,7 +16,6 @@ Script creates another .csv file with original file name with postfix `_prepared
 5) In Windows double click `setup.bat` or run in PowerShell `.\setup.bat` (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
    - At the end remember to activate environment manually in Windows `venv\Scripts\Activate.ps1` or in Linux `source ./venv/bin/activate`
 
-
 ## Create Windows PowerShell shortcut on desktop
 
 - Right-click on your desktop or in the folder where you want the shortcut.
