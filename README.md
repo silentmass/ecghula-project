@@ -11,7 +11,7 @@ Script creates another .csv file with original file name with postfix `_prepared
 2) Open terminal and type the following to check python is installed:
    - `python --version`
 3) Download project directory [ecghula-project](https://github.com/silentmass/ecghula-project) from github
-   1) Click green button **Code* -> Download ZIP -> Extract zip to easy location**
+   1) Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
 4) Go to `ecghula-project` directory in Linux terminal or Windows PowerShell
 5) In Windows run `setup.bat` (or in Linux run `chmod +x setup.sh` and then `./setup.sh`)
 
