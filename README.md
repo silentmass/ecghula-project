@@ -14,6 +14,8 @@ Script creates another .csv file with original file name with postfix `_prepared
    - Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
 4) Go to `ecghula-project` directory in Windows PowerShell or in Linux Terminal
 5) In Windows double click `setup.bat` or run in PowerShell `.\setup.bat` (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
+   - At the end remember to activate environment manually in Windows `venv\Scripts\activate` or in Linux `source ./venv/bin/activate`
+
 
 ## Create Windows PowerShell shortcut on desktop
 
