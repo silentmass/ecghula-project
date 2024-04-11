@@ -3,15 +3,21 @@
 Prepare .csv files for Kubios from HULA ECG .txt files.
 Fills Nan values with zeros.
 
+Script creates another .csv file with original file name with postfix `_prepared.csv` and a `.log` file
+
 ## Installation instructions
 
 1) Download and install Python from <https://www.python.org/downloads/>
 2) Open terminal and type the following to check python is installed:
    - `python --version`
 3) Download project directory [ecghula-project](https://github.com/silentmass/ecghula-project) from github
+   1) Click green button Code -> Download ZIP -> Extract zip to easy location
 4) Go to `ecghula-project` directory in terminal or command prompt or PowerShell
-5) In Windows run only `setup.bat` or alternatively create a virtual environment with `python -m venv venv` and activate environment with `venv\Scripts\activate` (or in Linux `source ./venv/bin/activate`) and install package with a command:
-   - `python -m pip install .`
+5) In Windows run only `setup.bat`
+   1) or alternatively
+      1) create a virtual environment with `python -m venv venv` and
+      2) activate environment with `venv\Scripts\activate` (or in Linux `source ./venv/bin/activate`) and
+      3) install package with a command: `python -m pip install .`
 
 ## Create Windows PowerShell shortcut on desktop
 
@@ -27,9 +33,6 @@ Fills Nan values with zeros.
 Example usage in command line (remember to enclose path containing spaces with ""):
 
 `ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
-
-Script creates another .csv file with original file name
-with postfix _prepared.csv and a .log file
 
 ## Contact
 
