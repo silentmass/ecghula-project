@@ -15,7 +15,8 @@ Installation instructions:
 2) Open terminal and type the following to check python is installed:
 python --version
 
-2) Download project directory ecghula-project from github
+2) Download project directory ecghula-project from
+github https://github.com/silentmass/ecghula-project
 
 3) Go to ecghula-project directory in terminal
 
