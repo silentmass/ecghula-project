@@ -24,7 +24,7 @@ Script creates another .csv file with original file name with postfix `_prepared
 - In the location field, enter the path to powershell.exe, followed by -NoExit (to keep the window open after the command runs) and -Command, and then the command to activate your virtual environment.
 - Change the project directory accordingly where ecghula-project was installed `change_location`
 
-`C:\Windows\System32\cmd.exe /k " C:\change_location\ecghula-project-main\venv\Scripts\activate.bat`
+`C:\Windows\System32\cmd.exe /k "C:\change_location\ecghula-project-main\venv\Scripts\activate.bat"`
 
 ## Running script to prepare HULA ECG .txt file
 
