@@ -2,3 +2,4 @@ venv/
 *.egg
 *.egg-info
 __pycache__/
+todo.md

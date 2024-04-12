@@ -4,6 +4,7 @@ import logging
 import os
 
 import pandas as pd
+from tqdm import trange
 
 
 def list_directory(dir_path):
@@ -22,9 +23,11 @@ def list_directory(dir_path):
             dir_files = os.listdir(os.path.abspath(dir_path))
             txt_files = [x for x in dir_files if x.endswith(".txt")]
             if txt_files:
-                for file in txt_files:
+                pbar = trange(len(txt_files))
+                for idx in pbar:
+                    file = txt_files[idx]
+                    pbar.set_description(f"Processing file: {file}")
                     file_path = os.path.join(dir_path, file)
-                    print(file_path)
                     prepare_csv_data(file_path)
             else:
                 print("No .txt files found.")
@@ -58,7 +61,7 @@ def get_logger(file_path):
     Returns:
         Logger: Logger for console and file
     """
-    logger = logging.getLogger("my_logger")
+    logger = logging.getLogger(os.path.basename(file_path))
     logger.setLevel(logging.INFO)
 
     # Console handler
@@ -153,3 +156,5 @@ ECG2\t{filled_nan_values_ecg2}\t{largest_nan_index_ecg2}"""
     data.to_csv(prepared_file_path)
 
     logger.info("Done!")
+
+    del data, logger
