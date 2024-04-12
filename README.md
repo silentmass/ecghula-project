@@ -21,7 +21,7 @@ Script creates another .csv file with original file name with postfix `_prepared
 
 - Right-click on your desktop or in the folder where you want the shortcut.
 - Choose New > Shortcut.
-- In the location field, enter the path to powershell.exe, followed by -NoExit (to keep the window open after the command runs) and -Command, and then the command to activate your virtual environment.
+- In the target/location field, enter the path to command prompt as shown below. You can also change the Start in directory.
 - Change the project directory accordingly where ecghula-project was installed `change_location`
 
 `C:\Windows\System32\cmd.exe /k "C:\change_location\ecghula-project-main\venv\Scripts\activate.bat"`
