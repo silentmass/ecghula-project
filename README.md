@@ -31,13 +31,13 @@ Script creates another .csv file with original file name with postfix `_prepared
 
 Example usage in command line (remember to enclose path containing spaces with ""):
 
-`ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
+`ecghula -i "/Users/juha/Downloads/hula/hula_ecg.txt"`
 
 ### CASE 2
 
 You can also pass directory path and iterate through all the directory .txt files
 
-`ecghula -d "/Users/juha/Downloads/hula"`
+`ecghula -i "/Users/juha/Downloads/hula"`
 
 ### CASE 3
 

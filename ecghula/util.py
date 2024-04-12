@@ -2,39 +2,47 @@
 
 import logging
 import os
+import sys
 
 import pandas as pd
 from tqdm import trange
 
 
-def list_directory(dir_path):
+def list_directory(input_path):
     """Prepared directory .txt files or prepare a single file
 
     Args:
         dir_path (str): Directory path or file path
     """
-    if os.path.exists(dir_path):
-        if os.path.isfile(dir_path) and dir_path.endswith(".txt"):
-            print(f"Selected file: {os.path.abspath(dir_path)}")
-            prepare_csv_data(dir_path)
+    txt_files = []
+    if not os.path.exists(input_path):
+        sys.exit("Input path doesn't exist")
 
-        elif os.path.isdir(dir_path):
-            print(f"Selected directory: {os.path.abspath(dir_path)}")
-            dir_files = os.listdir(os.path.abspath(dir_path))
-            txt_files = [x for x in dir_files if x.endswith(".txt")]
-            if txt_files:
-                pbar = trange(len(txt_files))
-                for idx in pbar:
-                    file = txt_files[idx]
-                    pbar.set_description(f"Processing file: {file}")
-                    file_path = os.path.join(dir_path, file)
-                    prepare_csv_data(file_path)
-            else:
-                print("No .txt files found.")
-        else:
-            print("Not a .txt file or a directory")
+    if os.path.isfile(input_path) and input_path.endswith(".txt"):
+        # Handel single file
+        dir_path = os.path.dirname(input_path)
+        txt_files.append(os.path.basename(input_path))
+    elif os.path.isdir(input_path):
+        dir_path = input_path
+        # Handle directory
+        for file_name in os.listdir(os.path.abspath(dir_path)):
+            if file_name.endswith(".txt"):
+                txt_files.append(file_name)
     else:
-        print("Path doesn't exist")
+        sys.exit("Not a .txt file or a directory")
+
+    if not txt_files:
+        sys.exit("No .txt files found.")
+        
+    print(txt_files)
+
+    # Prepare files
+    pbar = trange(len(txt_files))
+    for idx in pbar:
+        file_name = txt_files[idx]
+        pbar.set_description(f"Processing file: {file_name}")
+        file_path = os.path.join(dir_path, file_name)
+        prepare_csv_data(file_path)
 
 
 def get_largest_nan_index_format(value):
@@ -61,7 +69,8 @@ def get_logger(file_path):
     Returns:
         Logger: Logger for console and file
     """
-    logger = logging.getLogger(os.path.basename(file_path))
+    logger_name = os.path.basename(file_path).replace(".txt", "")
+    logger = logging.getLogger(name=logger_name)
     logger.setLevel(logging.INFO)
 
     # Console handler
@@ -70,7 +79,9 @@ def get_logger(file_path):
 
     # File handler
     file_handler = logging.FileHandler(
-        filename=file_path.replace(".txt", ".log"), mode="w"
+        filename=(os.path.join(os.path.dirname(file_path),
+                               f"{logger_name}.log")),
+        mode="w"
     )
     file_handler.setLevel(logging.INFO)
 
@@ -112,6 +123,22 @@ def prepare_csv_data(file_path):
     logger = get_logger(file_path)
 
     logger.info(f"Reading file: {file_path}")
+
+    # Check file format and structure to follow HULA format
+    header = pd.read_csv(
+        file_path,
+        sep="\t",
+        dtype=str,
+        header=None,
+        nrows=1
+    )
+    header_start = header.iloc[0].values[0]
+
+    if not header_start.startswith("Interval"):
+        logger.info("Couldn't identify as HULA ECG .txt file. "
+                    + "File should start with Interval=. "
+                    + "Skipping file.")
+        return
 
     data = pd.read_csv(
         file_path,
@@ -157,4 +184,4 @@ ECG2\t{filled_nan_values_ecg2}\t{largest_nan_index_ecg2}"""
 
     logger.info("Done!")
 
-    del data, logger
+    del data

@@ -39,14 +39,14 @@ Example usage in command line
 
 CASE 1:
 
-`ecghula -d "/Users/juha/Downloads/hula/hula_ecg.txt"`
+`ecghula -i "/Users/juha/Downloads/hula/hula_ecg.txt"`
 
 CASE 2:
 
 You can also pass directory path and
 iterate through all the directory .txt files
 
-`ecghula -d "/Users/juha/Downloads/hula"`
+`ecghula -i "/Users/juha/Downloads/hula"`
 
 CASE 3:
 
@@ -61,10 +61,10 @@ from ecghula.util import list_directory
 
 
 @click.command()
-@click.option("--dir_path", "-d", default=".",
-              help="HULA ECG directory or file path")
-def main(dir_path):
-    list_directory(dir_path)
+@click.option("--input_path", "-i", default=".",
+              help="HULA ECG directory or file path.")
+def main(input_path):
+    list_directory(input_path)
 
 
 if __name__ == "__main__":
