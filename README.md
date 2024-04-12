@@ -13,8 +13,9 @@ Script creates another .csv file with original file name with postfix `_prepared
 3) Download project directory [ecghula-project](https://github.com/silentmass/ecghula-project) from github
    - Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
 4) Go to `ecghula-project` directory in Windows PowerShell or in Linux Terminal
-5) In Windows double click `setup.bat` or run in PowerShell `.\setup.bat` (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
-6) Finally, remember to activate environment manually in Windows `.venv\Scripts\Activate.ps1` or in Linux `source ./venv/bin/activate`
+5) Skip if in Windows. In Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`
+6) Remember to activate environment manually in Windows `venv\Scripts\activate` or in Linux `source ./venv/bin/activate`
+7) Skip if in Linux. Setup.bat doesn't currently install the package!! You might have to manually install in `ecghula-project-main` with `python -m pip install .`
 
 ## Create Windows PowerShell shortcut on desktop
 
@@ -23,7 +24,7 @@ Script creates another .csv file with original file name with postfix `_prepared
 - In the location field, enter the path to powershell.exe, followed by -NoExit (to keep the window open after the command runs) and -Command, and then the command to activate your virtual environment.
 - Change the project directory accordingly where ecghula-project was installed `change_location`
 
-`C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoExit -Command "C:\change_location\ecghula-project\venv\Scripts\Activate.ps1}"`
+`C:\Windows\System32\cmd.exe /k " C:\change_location\ecghula-project-main\venv\Scripts\activate.bat`
 
 ## Running script to prepare HULA ECG .txt file
 
