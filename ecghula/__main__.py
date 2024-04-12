@@ -27,7 +27,7 @@ github https://github.com/silentmass/ecghula-project
 run in PowerShell `.\setup.bat`
 (or in Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`)
 5) Finally, remember to activate environment manually
-in Windows `venv\Scripts\activate` or
+in Windows `.venv\Scripts\activate` or
 in Linux `source ./venv/bin/activate`
 
 ###########
