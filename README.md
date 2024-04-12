@@ -24,7 +24,7 @@ Script creates another .csv file with original file name with postfix `_prepared
 - In the target/location field, enter the path to command prompt as shown below. You can also change the Start in directory.
 - Change the project directory accordingly where ecghula-project was installed `change_location`
 
-`C:\Windows\System32\cmd.exe /k "C:\change_location\ecghula-project-main\venv\Scripts\activate.bat"`
+`C:\Windows\System32\cmd.exe /k "C:\change_location\ecghula-project-main\venv\Scripts\activate"`
 
 ## Running script to prepare HULA ECG .txt file
 
