@@ -12,10 +12,10 @@ Script creates another .csv file with original file name with postfix `_prepared
    - `python --version`
 3) Download project directory [ecghula-project](https://github.com/silentmass/ecghula-project) from github
    - Click green button __Code__ -> __Download ZIP__ -> __Extract zip to easy location__
-4) Go to `ecghula-project` directory in Windows PowerShell or in Linux Terminal
+4) Go to `ecghula-project` directory in Linux Terminal or `ecghula-project-main` in Windows Command Prompt
 5) Skip if in Windows. In Linux Terminal run `chmod +x setup.sh` and then `./setup.sh`
 6) Remember to activate environment manually in Windows `venv\Scripts\activate` or in Linux `source ./venv/bin/activate`
-7) Skip if in Linux. Setup.bat doesn't currently install the package!! You might have to manually install in `ecghula-project-main` with `python -m pip install .`
+7) Skip if in Linux. In windows install package in `ecghula-project-main` with `python -m pip install .`
 
 ## Create Windows PowerShell shortcut on desktop
 
